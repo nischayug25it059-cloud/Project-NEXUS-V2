@@ -10,6 +10,12 @@ const lenis = new Lenis({
 
 lenis.on("scroll", ScrollTrigger.update);
 
+gsap.ticker.add((time) => {
+    lenis.raf(time * 1000);
+});
+
+gsap.ticker.lagSmoothing(0);
+
 // Hero Exit
 const heroTimeline = gsap.timeline({
 
@@ -114,6 +120,7 @@ gsap.from(".about-container", {
 gsap.utils.toArray(".skill-card").forEach((card, i) => {
 
     gsap.from(card,{
+
         x:i%2===0?-150:150,
         y:60,
         opacity:0,
@@ -123,8 +130,8 @@ gsap.utils.toArray(".skill-card").forEach((card, i) => {
 
         scrollTrigger:{
             trigger:card,
-            start:"top 90%",
-            toggleActions:"play none none reset",
+            start:"top 85%",
+            toggleActions:"play none none reverse",
             invalidateOnRefresh:true
         }
 
@@ -138,7 +145,10 @@ gsap.utils.toArray(".skill-card").forEach((card, i) => {
 
 gsap.utils.toArray("section").forEach((section) => {
 
-    if(section.classList.contains("hero")) return;
+    if(
+        section.classList.contains("hero") ||
+        section.classList.contains("skills")
+    ) return;
 
     gsap.from(section,{
 
@@ -160,7 +170,9 @@ gsap.utils.toArray("section").forEach((section) => {
 
             start:"top 80%",
 
-            toggleActions:"play none none reverse"
+            toggleActions:"play none none reverse",
+
+            invalidateOnRefresh:true
 
         }
 
@@ -168,4 +180,12 @@ gsap.utils.toArray("section").forEach((section) => {
 
 });
 
-ScrollTrigger.refresh();
+window.addEventListener("load",()=>{
+
+    ScrollTrigger.refresh();
+
+});
+
+window.addEventListener("resize", () => {
+    ScrollTrigger.refresh();
+});
