@@ -212,4 +212,140 @@ opacity:0;
 
 }
 
+/*====================================
+NEXUS GRID
+====================================*/
 
+.bg-grid{
+
+position:fixed;
+
+inset:0;
+
+pointer-events:none;
+
+z-index:-5;
+
+background:
+
+linear-gradient(
+rgba(255,255,255,.03) 1px,
+transparent 1px),
+
+linear-gradient(
+90deg,
+rgba(255,255,255,.03) 1px,
+transparent 1px);
+
+background-size:50px 50px;
+
+mask-image:radial-gradient(circle,
+white 20%,
+transparent 90%);
+
+opacity:.35;
+
+animation:gridMove 18s linear infinite;
+
+}
+
+@keyframes gridMove{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+100%{
+
+transform:translateY(50px);
+
+}
+
+}
+/* =====================================
+   MOUSE LIGHT
+===================================== */
+
+.mouse-light{
+
+    position:fixed;
+
+    width:500px;
+
+    height:500px;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    z-index:-9;
+
+    left:0;
+
+    top:0;
+
+    transform:translate(-50%,-50%);
+
+    background:radial-gradient(
+        circle,
+        rgba(59,130,246,.16),
+        rgba(6,182,212,.08),
+        transparent 70%
+    );
+
+    filter:blur(45px);
+
+    will-change:transform;
+}
+
+/*==================================
+NEXUS STARS
+==================================*/
+
+.stars{
+
+position:fixed;
+
+inset:0;
+
+pointer-events:none;
+
+z-index:-8;
+
+overflow:hidden;
+
+}
+
+.star{
+
+position:absolute;
+
+border-radius:50%;
+
+background:white;
+
+animation:twinkle linear infinite;
+
+opacity:.35;
+
+}
+
+@keyframes twinkle{
+
+0%,100%{
+
+opacity:.15;
+transform:scale(.7);
+
+}
+
+50%{
+
+opacity:1;
+transform:scale(1.35);
+
+}
+
+}

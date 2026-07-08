@@ -10,3 +10,54 @@ section{
 will-change:transform;
 
 }
+/*==============================
+NEXUS CURSOR
+==============================*/
+
+body{
+
+cursor:auto;
+
+}
+
+.cursor-ring{
+
+position:fixed;
+
+width:38px;
+
+height:38px;
+
+border:2px solid rgba(255,255,255,.35);
+
+border-radius:50%;
+
+pointer-events:none;
+
+z-index:99998;
+
+transform:translate(-50%,-50%);
+
+backdrop-filter:blur(3px);
+
+transition:
+width .3s,
+height .3s,
+border-color .3s,
+background .3s;
+
+}
+
+.cursor-hover{
+
+width:70px!important;
+
+height:70px!important;
+
+border-color:#3B82F6;
+
+background:
+
+rgba(59,130,246,.15);
+
+}
