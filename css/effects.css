@@ -1,0 +1,12 @@
+section{
+
+    will-change:transform,opacity;
+
+}
+.primary-btn,
+.secondary-btn,
+.resume-btn{
+
+will-change:transform;
+
+}

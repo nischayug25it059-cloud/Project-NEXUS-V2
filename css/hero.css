@@ -1,0 +1,45 @@
+/*=============================
+3D HERO
+=============================*/
+
+.hero{
+
+perspective:1600px;
+
+transform-style:preserve-3d;
+
+}
+
+.profile-wrapper{
+
+transform-style:preserve-3d;
+
+will-change:transform;
+
+transition:transform .2s;
+
+}
+
+.profile-circle{
+
+transition:
+
+box-shadow .4s,
+
+transform .4s;
+
+}
+
+.profile-wrapper:hover .profile-circle{
+
+box-shadow:
+
+0 0 40px rgba(59,130,246,.45),
+
+0 0 90px rgba(59,130,246,.25),
+
+0 0 150px rgba(59,130,246,.18);
+
+transform:translateZ(40px);
+
+}
