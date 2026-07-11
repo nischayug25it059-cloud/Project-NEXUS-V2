@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="css/experience.css">
     <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/loader.css">
 
     <link rel="stylesheet" href="css/effects.css">
     <link rel="stylesheet" href="css/animations.css">
@@ -48,6 +49,37 @@
 </head>
 
 <body>
+
+    <!--================ LOADER ================-->
+
+    <div id="loader">
+
+        <div class="loader-content">
+
+            <h1>
+
+                PROJECT
+                <span>NEXUS</span>
+
+            </h1>
+
+            <p>
+
+                Designed & Developed by
+
+                <strong>Nischay Nayak</strong>
+
+            </p>
+
+            <div class="loader-bar">
+
+                <span></span>
+
+            </div>
+
+        </div>
+
+    </div>
 
     <div class="animated-bg"></div>
     <div class="particles"></div>
@@ -78,6 +110,8 @@
                 <li><a href="#skills">Skills</a></li>
 
                 <li><a href="#projects">Projects</a></li>
+
+                <li><a href="#certificates">Certificates</a></li>
 
                 <li><a href="#experience">Experience</a></li>
 
@@ -462,123 +496,117 @@
 
     </section>
 
-<!--================ CERTIFICATES ================-->
+    <!--================ CERTIFICATES ================-->
 
-<section id="certificates" class="certificates">
+    <section id="certificates" class="certificates">
 
-    <div class="section-title">
+        <div class="section-title">
 
-        <h2>
-            My <span>Certificates</span>
-        </h2>
+            <h2>
+                My <span>Certificates</span>
+            </h2>
 
-        <p>
-            Professional certifications and achievements.
-        </p>
-
-    </div>
-
-    <div class="certificate-window">
-
-        <div class="certificate-track">
-
-            <!-- Certificate 1 -->
-
-            <article class="certificate-slide">
-
-                <div class="certificate-image">
-
-                    <img src="assets/certificates/python.jpg"
-                         alt="Python Certificate">
-
-                </div>
-
-                <div class="certificate-content">
-
-                    <span class="featured-tag">
-                        CERTIFICATE
-                    </span>
-
-                    <h3>Complete Python Bootcamp</h3>
-
-                    <p>Udemy • June 2026</p>
-
-                    <a href="assets/certificates/python.pdf"
-                       target="_blank"
-                       class="primary-btn">
-
-                        📄 View Certificate
-
-                    </a>
-
-                </div>
-
-            </article>
-
-            <!-- Certificate 2 -->
-
-            <article class="certificate-slide">
-
-                <div class="certificate-image">
-
-                    <img src="assets/certificates/sql.jpg"
-                         alt="SQL Certificate">
-
-                </div>
-
-                <div class="certificate-content">
-
-                    <span class="featured-tag">
-                        CERTIFICATE
-                    </span>
-
-                    <h3>SQL Advanced</h3>
-
-                    <p>HackerRank • July 2026</p>
-
-                    <a href="assets/certificates/sql.pdf"
-                       target="_blank"
-                       class="primary-btn">
-
-                        📄 View Certificate
-
-                    </a>
-
-                </div>
-
-            </article>
+            <p>
+                Professional certifications and achievements.
+            </p>
 
         </div>
 
-    </div>
+        <div class="certificate-window">
 
-    <div class="certificate-controls">
+            <div class="certificate-track">
 
-        <button class="certificate-prev">←</button>
+                <!-- Certificate 1 -->
 
-        <div class="certificate-dots">
+                <article class="certificate-slide">
 
-            <span class="dot active"></span>
+                    <div class="certificate-image">
 
-            <span class="dot"></span>
+                        <img src="assets/certificates/python.jpg" alt="Python Certificate">
+
+                    </div>
+
+                    <div class="certificate-content">
+
+                        <span class="featured-tag">
+                            CERTIFICATE
+                        </span>
+
+                        <h3>Complete Python Bootcamp</h3>
+
+                        <p>Udemy • June 2026</p>
+
+                        <a href="assets/certificates/python.pdf" target="_blank" class="primary-btn">
+
+                            📄 View Certificate
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+                <!-- Certificate 2 -->
+
+                <article class="certificate-slide">
+
+                    <div class="certificate-image">
+
+                        <img src="assets/certificates/sql.jpg" alt="SQL Certificate">
+
+                    </div>
+
+                    <div class="certificate-content">
+
+                        <span class="featured-tag">
+                            CERTIFICATE
+                        </span>
+
+                        <h3>SQL Advanced</h3>
+
+                        <p>HackerRank • July 2026</p>
+
+                        <a href="assets/certificates/sql.pdf" target="_blank" class="primary-btn">
+
+                            📄 View Certificate
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
 
         </div>
 
-        <button class="certificate-next">→</button>
+        <div class="certificate-controls">
 
-    </div>
+            <button class="certificate-prev">←</button>
 
-    <div class="view-all-wrapper">
+            <div class="certificate-dots">
 
-        <a href="#" class="view-all-btn">
+                <span class="dot active"></span>
 
-            View All Certificates →
+                <span class="dot"></span>
 
-        </a>
+            </div>
 
-    </div>
+            <button class="certificate-next">→</button>
 
-</section>
+        </div>
+
+        <div class="view-all-wrapper">
+
+            <a href="#" class="view-all-btn">
+
+                View All Certificates →
+
+            </a>
+
+        </div>
+
+    </section>
 
     <!--================ EXPERIENCE ================-->
 
@@ -775,7 +803,7 @@
     <script src="js/hero.js"></script>
     <script src="js/projects.js"></script>
     <script src="js/certificates.js"></script>
-    <!-- <script src="js/gsap.js"></script> -->
+    <script src="js/gsap.js"></script>
     <script src="js/typing.js"></script>
 
 
