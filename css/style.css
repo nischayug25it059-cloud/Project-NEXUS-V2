@@ -44,17 +44,20 @@ html {
 /*=========================================
         GLOBAL
 =========================================*/
-body {
+body{
 
-    font-family: 'Poppins', sans-serif;
+    font-family:'Poppins',sans-serif;
 
-    background: var(--background);
+    background:var(--background);
 
-    color: var(--text);
+    color:var(--text);
 
-    overflow-x: hidden;
+    overflow-x:hidden;
+
+    cursor:none;
 
 }
+
 
 .container {
 
@@ -404,7 +407,7 @@ Hero Section
 
     font-weight: 700;
 
-    cursor: pointer;
+    cursor: none;
 
     transition: .35s ease;
 
@@ -1057,7 +1060,7 @@ Hero Section
 
     border-radius: 50%;
 
-    cursor: pointer;
+    cursor: none;
 
     background: #111827;
 
@@ -2242,4 +2245,69 @@ transform:translateY(-4px);
 
 box-shadow:0 0 20px rgba(59,130,246,.35);
 
+}
+
+/*==============================
+CUSTOM CURSOR
+==============================*/
+
+.cursor-dot{
+
+    position:fixed;
+
+    width:8px;
+
+    height:8px;
+
+    background:#3B82F6;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    z-index:999999;
+
+    transform:translate(-50%,-50%);
+
+}
+
+.cursor-ring{
+
+    position:fixed;
+
+    width:38px;
+
+    height:38px;
+
+    border:2px solid rgba(59,130,246,.6);
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    z-index:999998;
+
+    transform:translate(-50%,-50%);
+
+}
+
+.cursor-hover{
+
+    width:65px;
+
+    height:65px;
+
+    border-color:#60A5FA;
+
+    background:rgba(59,130,246,.08);
+
+}
+/* ===== Force Hide System Cursor ===== */
+
+html,
+body,
+*,
+*::before,
+*::after{
+    cursor: none !important;
 }

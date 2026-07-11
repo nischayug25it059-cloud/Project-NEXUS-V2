@@ -33,3 +33,46 @@
 .resume-btn{
 
 }
+/*==============================
+ACTIVE NAVBAR LINK
+==============================*/
+
+.nav-links a{
+
+    position:relative;
+
+}
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0%;
+
+    height:2px;
+
+    background:#3B82F6;
+
+    transition:.35s;
+
+}
+
+.nav-links a.active::after,
+
+.nav-links a:hover::after{
+
+    width:100%;
+
+}
+
+.nav-links a.active{
+
+    color:#60A5FA;
+
+}

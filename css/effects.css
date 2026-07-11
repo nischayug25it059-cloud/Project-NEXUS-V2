@@ -16,48 +16,121 @@ NEXUS CURSOR
 
 body{
 
-cursor:auto;
+cursor:none;
 
 }
 
-.cursor-ring{
+/*==============================
+CARD SPOTLIGHT
+==============================*/
 
-position:fixed;
+.spotlight-card{
 
-width:38px;
+    position:relative;
 
-height:38px;
-
-border:2px solid rgba(255,255,255,.35);
-
-border-radius:50%;
-
-pointer-events:none;
-
-z-index:99998;
-
-transform:translate(-50%,-50%);
-
-backdrop-filter:blur(3px);
-
-transition:
-width .3s,
-height .3s,
-border-color .3s,
-background .3s;
+    overflow:hidden;
 
 }
 
-.cursor-hover{
+.spotlight-card::before{
 
-width:70px!important;
+    content:"";
 
-height:70px!important;
+    position:absolute;
 
-border-color:#3B82F6;
+    width:320px;
 
-background:
+    height:320px;
 
-rgba(59,130,246,.15);
+    left:var(--x);
 
+    top:var(--y);
+
+    transform:translate(-50%,-50%);
+
+    background:radial-gradient(
+
+        circle,
+
+        rgba(59,130,246,.20),
+
+        transparent 65%
+
+    );
+
+    opacity:0;
+
+    transition:opacity .35s;
+
+    pointer-events:none;
+
+}
+
+.spotlight-card:hover::before{
+
+    opacity:1;
+
+}
+
+/*==============================
+MAGNETIC BUTTONS
+==============================*/
+
+.primary-btn,
+.secondary-btn,
+.resume-btn,
+.view-all-btn,
+.project-action,
+.certificate-btn{
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+
+    will-change: transform;
+
+}
+
+/* click effect */
+
+.click-ripple{
+
+    position:fixed;
+
+    width:14px;
+    height:14px;
+
+    border:2px solid #3B82F6;
+
+    border-radius:50%;
+
+    transform:translate(-50%,-50%) scale(0);
+
+    pointer-events:none;
+
+    z-index:999999;
+
+    animation:ripple .6s ease-out forwards;
+
+}
+
+@keyframes ripple{
+
+    to{
+
+        transform:translate(-50%,-50%) scale(6);
+
+        opacity:0;
+
+    }
+
+}
+/* ===== Force Hide System Cursor ===== */
+
+html,
+body,
+*,
+*::before,
+*::after{
+    cursor: none !important;
 }

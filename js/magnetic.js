@@ -2,48 +2,61 @@
 // MAGNETIC BUTTONS
 // =============================
 
-const magneticButtons = document.querySelectorAll(
-".primary-btn,.secondary-btn,.resume-btn"
+const magneticElements = document.querySelectorAll(
+".primary-btn,.secondary-btn,.resume-btn,.view-all-btn,.project-action,.certificate-btn"
 );
 
-magneticButtons.forEach(button=>{
+magneticElements.forEach(element=>{
 
-button.addEventListener("mousemove",(e)=>{
+    element.addEventListener("mousemove",(e)=>{
 
-const rect=button.getBoundingClientRect();
+        const rect=element.getBoundingClientRect();
 
-const x=e.clientX-rect.left-rect.width/2;
+        const x=e.clientX-rect.left-rect.width/2;
 
-const y=e.clientY-rect.top-rect.height/2;
+        const y=e.clientY-rect.top-rect.height/2;
 
-gsap.to(button,{
+        element.style.transform=`translate(${x*0.18}px,${y*0.18}px)`;
 
-x:x*0.25,
+    });
 
-y:y*0.25,
+    element.addEventListener("mouseleave",()=>{
 
-duration:.35,
+        element.style.transform="translate(0,0)";
 
-ease:"power3.out"
-
-});
+    });
 
 });
 
-button.addEventListener("mouseleave",()=>{
 
-gsap.to(button,{
+// =============================
+// CARD SPOTLIGHT
+// =============================
 
-x:0,
+const cards=document.querySelectorAll(
 
-y:0,
+".skill-card,.featured-slide,.certificate-slide,.timeline-card,.about-card,.project-box"
 
-duration:.55,
+);
 
-ease:"elastic.out(1,.45)"
+cards.forEach(card=>{
 
-});
+    card.classList.add("spotlight-card");
 
-});
+    card.addEventListener("mousemove",e=>{
+
+        const rect=card.getBoundingClientRect();
+
+        card.style.setProperty(
+            "--x",
+            `${e.clientX-rect.left}px`
+        );
+
+        card.style.setProperty(
+            "--y",
+            `${e.clientY-rect.top}px`
+        );
+
+    });
 
 });

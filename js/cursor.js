@@ -1,55 +1,48 @@
-//==============================
-// NEXUS CURSOR
-//==============================
+const dot = document.querySelector(".cursor-dot");
+const ring = document.querySelector(".cursor-ring");
 
-const dot=document.querySelector(".cursor-dot");
-const ring=document.querySelector(".cursor-ring");
+if(dot && ring){
 
-let mouseX=0;
-let mouseY=0;
+    let mouseX = window.innerWidth/2;
+    let mouseY = window.innerHeight/2;
 
-window.addEventListener("mousemove",(e)=>{
+    window.addEventListener("mousemove",(e)=>{
 
-mouseX=e.clientX;
-mouseY=e.clientY;
+        mouseX = e.clientX;
+        mouseY = e.clientY;
 
-gsap.set(dot,{
-x:mouseX,
-y:mouseY
-});
+        dot.style.left = mouseX + "px";
+        dot.style.top = mouseY + "px";
 
-});
+    });
 
-gsap.ticker.add(()=>{
+    function animate(){
 
-gsap.to(ring,{
+        ring.style.left = mouseX + "px";
+        ring.style.top = mouseY + "px";
 
-x:mouseX,
+        requestAnimationFrame(animate);
 
-y:mouseY,
+    }
 
-duration:.18,
+    animate();
 
-ease:"power3.out"
+    document.querySelectorAll(
+        "a,button,.project-box,.skill-card,.certificate-slide,.timeline-card"
+    ).forEach(item=>{
 
-});
+        item.addEventListener("mouseenter",()=>{
 
-});
+            ring.classList.add("cursor-hover");
 
-document.querySelectorAll(
-"a,button,.skill-card,.project-card"
-).forEach(item=>{
+        });
 
-item.addEventListener("mouseenter",()=>{
+        item.addEventListener("mouseleave",()=>{
 
-ring.classList.add("cursor-hover");
+            ring.classList.remove("cursor-hover");
 
-});
+        });
 
-item.addEventListener("mouseleave",()=>{
+    });
 
-ring.classList.remove("cursor-hover");
-
-});
-
-});
+}

@@ -92,7 +92,7 @@
 
     color:white;
 
-    cursor:pointer;
+    cursor:none;
 
     transition:.35s;
 
@@ -526,7 +526,7 @@ CERTIFICATE SLIDER
 
     color:#fff;
 
-    cursor:pointer;
+    cursor:none;
 
 }
 

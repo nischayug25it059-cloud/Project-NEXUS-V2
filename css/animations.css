@@ -116,3 +116,25 @@ transform:rotate(0deg);
     animation:glowPulse 2.5s infinite;
 
 }
+/*==============================
+PAGE EXIT
+==============================*/
+
+body{
+
+    transition:
+        opacity .45s ease,
+        transform .45s ease,
+        filter .45s ease;
+
+}
+
+body.page-exit{
+
+    opacity:0;
+
+    transform:scale(.98);
+
+    filter:blur(8px);
+
+}

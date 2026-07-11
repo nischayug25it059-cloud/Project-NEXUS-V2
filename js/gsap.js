@@ -2,31 +2,31 @@ gsap.registerPlugin(ScrollTrigger);
 
 /* Hero */
 
-gsap.from(".hero-left",{
+if(document.querySelector(".hero-left")){
 
-    y:80,
+    gsap.from(".hero-left",{
 
-    opacity:0,
+        y:80,
+        opacity:0,
+        duration:1.2,
+        ease:"power4.out"
 
-    duration:1.2,
+    });
 
-    ease:"power4.out"
+}
 
-});
+if(document.querySelector(".hero-right")){
 
-gsap.from(".hero-right",{
+    gsap.from(".hero-right",{
 
-    scale:.8,
+        y:80,
+        opacity:0,
+        duration:1.2,
+        ease:"power4.out"
 
-    opacity:0,
+    });
 
-    duration:1.4,
-
-    delay:.2,
-
-    ease:"power4.out"
-
-});
+}
 
 /* Section Titles */
 
@@ -79,6 +79,54 @@ gsap.utils.toArray(
         duration:1,
 
         ease:"power4.out"
+
+    });
+
+});
+
+gsap.utils.toArray(".project-box").forEach(card => {
+
+    gsap.from(card, {
+
+        scrollTrigger: {
+
+            trigger: card,
+
+            start: "top 85%"
+
+        },
+
+        y: 60,
+
+        opacity: 0,
+
+        duration: 0.8,
+
+        ease: "power3.out"
+
+    });
+
+});
+
+gsap.utils.toArray(".project-box").forEach(card => {
+
+    gsap.from(card, {
+
+        scrollTrigger: {
+
+            trigger: card,
+
+            start: "top 85%"
+
+        },
+
+        y: 60,
+
+        opacity: 0,
+
+        duration: 0.8,
+
+        ease: "power3.out"
 
     });
 
